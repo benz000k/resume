@@ -1,0 +1,167 @@
+<div>
+  <h2>Biography</h2>
+  <div>
+    <h3>
+      {{name}}</h3>
+    <hr />
+    <b>He was born</b>
+    <br />
+    Birthdata -
+    {{birthdate}}
+    <br />
+    Birthplace:
+    {{birthplace}}
+    <br />
+    <br />
+    <b>Death</b>
+    <br />
+    Date -
+    {{deathdate}}
+    <br />
+    Place:
+    {{deathplace}}
+  </div>
+  <hr />
+  <div>
+    <h3>Information</h3>
+    Nationality:
+    {{nationality}}
+    <br />
+    Occupation:
+    {{occupation}}
+    <br />
+    <strong>Opened:</strong>
+    <br />
+    {{#each known_for}}
+      {{this}}
+      <br />
+    {{/each}}
+  </div>
+  <br />
+  <hr />
+  <div>
+    <h3>Education</h3>
+    {{#each education}}
+      Degree:
+      {{degree}}
+      <br />
+      Field:
+      {{field}}
+      <br />
+      Institution:
+      {{institution}}
+      <br />
+      Year:
+      {{year}}
+    {{/each}}
+    <br />
+    <hr />
+    <div>
+      <h3>Notable Publications</h3>
+      {{#each notable_publications}}
+        Opened:
+        {{title}}
+        <br />
+        Year:
+        {{year}}
+        <br />
+        Publisher:
+        {{publisher}}
+        <br />
+        <br />
+      {{/each}}
+    </div>
+    <br />
+    <hr />
+    <div>
+      <h3>Partners</h3>
+      {{#each partners}}
+        Name:
+        {{name}}
+        <br />
+        Relationship:
+        {{relationship}}
+        <br />
+        Years:
+        {{years}}
+        <br />
+        <br />
+      {{/each}}
+    </div>
+    <br />
+    <hr />
+    <div>
+      <h3>Awards</h3>
+      {{#each awards}}
+        Discoveries:
+        {{title}}
+        <br />
+        Year:
+        {{year}}
+        <br />
+        Description:
+        <p>{{description}}</p>
+      {{/each}}
+    </div>
+    <br />
+    <hr />
+    <div>
+      <h3>Influenced</h3>
+      <b>Influences:</b>
+      <br />
+      {{#each influences}}
+        {{this}}
+        <br />
+      {{/each}}
+      <br />
+      <br />
+      <b>Influenced:</b>
+      <br />
+      {{#each influenced}}
+        {{this}}
+        <br />
+      {{/each}}
+    </div>
+    <br />
+    <hr />
+    <div>
+      <h3>Quotes</h3>
+      {{#each quotes}}
+        <blockquote>{{this}}</blockquote>
+      {{/each}}
+    </div>
+    <br />
+    <hr />
+    <div>
+      <h3>Major Discoveries</h3>
+      <br />
+      {{#each major_discoveries}}
+        Discoveries:
+        {{title}}
+        <br />
+        Year:
+        {{year}}
+        <br />
+        Description:
+        <p>{{description}}</p>
+      {{/each}}
+    </div>
+    <br />
+    <hr />
+    <div>
+      <h3>Contributions</h3>
+      {{#with contributions}}
+        <b>{{title}}</b>
+        <br />
+        Description:
+        <p>{{description}}</p>
+        <br />
+        Year:
+        {{year}}
+        <br />
+        Field:
+        {{field}}
+      {{/with}}
+    </div>
+  </div>
+</div>
