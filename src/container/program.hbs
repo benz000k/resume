@@ -1,0 +1,117 @@
+<div>
+  {{#with program}}
+    {{#with excursion}}
+      <h2>{{name}}</h2>
+      <br />
+      <hr />
+      {{#with location}}
+        <h3>City:
+          {{city}}
+          <br />
+          Country:
+          {{country}}</h3>
+      {{/with}}
+      <br />
+      Date:
+      {{date}}
+      <br />
+      <hr />
+      <div>
+        <strong>Program</strong>
+        <br />
+        <br />
+        {{#each program}}
+          <ul>
+            <li>
+              <strong>{{name}}</strong>
+              <br />
+              Type:
+              {{type}}
+              <br />
+              Duration:
+              {{duration}}
+              <br />
+              <br />
+            </li>
+          </ul>
+          <div>
+            {{#with details}}
+              {{#with venue}}
+                <strong>{{name}}</strong>
+                <br />
+                {{#with location}}
+                  Address:
+                  {{address}}
+                  <br />
+                  City:
+                  {{city}}
+                  <br />
+                  County:
+                  {{country}}
+                {{/with}}
+              {{/with}}
+              <br />
+              <br />
+              <div>
+                {{#each performers}}
+                  <strong>{{name}}</strong>
+                  <br />
+                  {{type}}
+                  <br />
+                {{/each}}
+              </div>
+            {{/with}}
+          </div>
+          {{#with details}}
+            {{#with museum}}
+              <strong>{{name}}</strong>
+              <br />
+              {{#with location}}
+                Address:
+                {{address}}
+                <br />
+                City:
+                {{city}}
+                <br />
+                Country:
+                {{country}}
+              {{/with}}
+              <br />
+              {{#each exhibits}}
+                <strong>{{name}}</strong>
+                <br />
+                Artist:
+                {{#unless artist includeZero=true}}
+                  (невідомий)
+                {{/unless}}
+                {{#if artist includeZero=true}}
+                  {{artist}}
+                {{/if}}
+                <br />
+                Description:
+                {{description}}
+                <br />
+                {{#if audio_guide}}
+                  (є аудіо гайд)
+                {{else}}
+                  (немає аудіо гайда)
+                {{/if}}
+                <br />
+                <br />
+              {{/each}}
+            {{/with}}
+            <br />
+            {{#with guide}}
+              {{name}}
+              <br />
+              {{language}}
+              <br />
+              {{rating}}
+            {{/with}}
+          {{/with}}
+          <hr />
+        {{/each}}
+      </div>
+    {{/with}}
+  {{/with}}
+</div>
