@@ -1,0 +1,277 @@
+<div>
+  <div class='p-5'>
+    <h1>{{make}} {{model}} {{year}} {{color}}</h1>
+
+    <button
+      type='button'
+      class='btn btn-primary'
+    >Купити</button>
+  </div>
+  <br />
+  <hr />
+  <div>
+    {{#with features}}
+      {{#with interior}}
+        {{#with seats}}
+          <h3>Seats</h3>
+          Material:
+          {{material}}
+          <br />
+          Color:
+          {{color}}
+          <br />
+          Heated:
+          {{#if heated}}
+            є підголовник
+          {{else}}
+            немає підголовника
+          {{/if}}
+          <br />
+          Ventilated:
+          {{#if ventilated}}
+            є вінтіляція
+          {{else}}
+            немає вінтіляції
+          {{/if}}
+        {{/with}}
+        <hr />
+        <h3>
+          Dashboard:
+        </h3>
+        {{#with dashboard}}
+          Material:
+          {{material}}
+          <br />
+          Color:
+          {{color}}
+          <br />
+          {{#with display}}
+            Type:
+            {{type}}
+            <br />
+            Size:
+            {{size}}
+            <br />
+            Resolution:
+            {{resolution}}
+            <br />
+            Touchscreen:
+            {{#if touchscreen}}
+              є тачскрін
+            {{else}}
+              немає тачскріна
+            {{/if}}
+          {{/with}}
+        {{/with}}
+        <br />
+        <hr />
+        {{#with audio}}
+          <h3>Audio</h3>
+          System:
+          {{system}}
+          <br />
+          Speakers:
+          {{speakers}}
+          <br />
+          Cабуфер:
+          {{#if subwoofer}}
+            є сабуфер
+          {{else}}
+            немає сабуфера
+          {{/if}}
+          <br />
+          Bluetooth:
+          {{#if bluetooth}}
+            є блютуз
+          {{else}}
+            немає блютуза
+          {{/if}}
+          <br />
+          USB:
+          {{#if USB}}
+            єсть
+          {{else}}
+            немає
+          {{/if}}
+        {{/with}}
+      {{/with}}
+      <hr />
+      <hr />
+      <br />
+      <h3>Wheels</h3>
+      {{#with exterior}}
+        {{#with wheels}}
+          Size:
+          {{size}}
+          <br />
+          Type:
+          {{type}}
+          <br />
+          Color:
+          {{color}}
+        {{/with}}
+        <br />
+        <hr />
+        <h3>Headlights</h3>
+        {{#with headlights}}
+          Type:
+          {{type}}
+          <br />
+          Brightness:
+          {{brightness}}
+          <br />
+          Automatic:
+          {{#if automatic}}
+            єсть
+          {{else}}
+            немає
+          {{/if}}
+        {{/with}}
+        <br />
+        <hr />
+        <h3>Sunroof</h3>
+        {{#with sunroof}}
+          Type:
+          {{type}}
+          <br />
+          Size:
+          {{size}}
+          <br />
+          Automatic:
+          {{#if automatic}}
+            єсть
+          {{else}}
+            немає
+          {{/if}}
+        {{/with}}
+      {{/with}}
+      <hr />
+      <hr />
+      <h3>Safety</h3>
+      {{#with safety}}
+        {{#with airbags}}
+          Front:
+          {{front}}
+          <br />
+          Side:
+          {{side}}
+          <br />
+          Knee:
+          {{knee}}
+          <br />
+          Rear:
+          {{rear}}
+        {{/with}}
+        <hr />
+        {{#with assistance}}
+          <h3>Assistance</h3>
+          Blind Spot Monitoring:
+          {{#if blind_spot_monitoring}}
+            єсть
+          {{else}}
+            немає
+          {{/if}}
+          <br />
+          Rear Cross Traffic Alert:
+          {{#if rear_cross_traffic_alert}}
+            єсть
+          {{else}}
+            немає
+          {{/if}}
+          <br />
+          Lane Departure Warning:
+          {{#if lane_departure_warning}}
+            єсть
+          {{else}}
+            немає
+          {{/if}}
+          <br />
+          Adaptive cruise Control:
+          {{#if adaptive_cruise_control}}
+            єсть
+          {{else}}
+            немає
+          {{/if}}
+          <br />
+          Collision Warning:
+          {{#if collision_warning}}
+            єсть
+          {{else}}
+            немає
+          {{/if}}
+        {{/with}}
+      {{/with}}
+    {{/with}}
+  </div>
+  <div>
+    <hr />
+    <hr />
+    <h3>Engine</h3>
+    {{#with engine}}
+      Type:
+      {{type}}
+      <br />
+      Displacement:
+      {{displacement}}
+      <br />
+      Horsepower:
+      {{horsepower}}
+      <br />
+      Torque:
+      {{torque}}
+      <br />
+      <br />
+      <strong>Transmission</strong>
+      <br />
+      {{#with transmission}}
+        Type:
+        {{type}}
+        <br />
+        Gears:
+        {{gears}}
+      {{/with}}
+    {{/with}}
+  </div>
+  <hr />
+  <div>
+    <h3>Fuel economy</h3>
+    {{#with fuel_economy}}
+      City:
+      {{city}}
+      <br />
+      Highway:
+      {{highway}}
+      <br />
+      Combined:
+      {{combined}}
+    {{/with}}
+  </div>
+  <hr />
+  <div>
+    <h3>Price</h3>
+    {{#with price}}
+      Base:
+      {{base}}
+      <br />
+      Destination:
+      {{destination}}
+      <br />
+      <br />
+      <strong>Options</strong>
+      <br />
+      {{#with options}}
+        Navigation:
+        {{navigation}}
+        <br />
+        Moonroof:
+        {{moonroof}}
+        <br />
+        Premium Paint:
+        {{premium_paint}}
+      {{/with}}
+      <br />
+      <br />
+      <h3>Total: {{total}}$</h3>
+    {{/with}}
+  </div>
+</div>
