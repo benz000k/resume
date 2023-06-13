@@ -1,0 +1,67 @@
+<div>
+  <h2>
+    Programming language
+    <span class='badge bg-secondary'>{{name}}</span></h2>
+  Description:
+  {{description}}
+  <br />
+  <br />
+  <strong>History
+    {{#with history}}
+      Year:
+      {{year}}
+      <br />
+      Founder:
+      {{founder}}
+    {{/with}}
+  </strong>
+  <br />
+  <hr />
+  <h3>Types:</h3>
+  {{#each types}}
+    {{this}}
+    <br />
+  {{/each}}
+  <br />
+  <hr />
+  <h3>Syntax:</h3>
+  {{#each syntax}}
+    {{this}}
+    <br />
+  {{/each}}
+  <br />
+  <hr />
+  <h3>Features:</h3>
+  {{#each features}}
+    {{this}}
+    <br />
+  {{/each}}
+  <br />
+  <hr />
+  <h3>Libraries:</h3>
+  {{#each libraries}}
+    {{this}}
+    <br />
+  {{/each}}
+  <br />
+  <hr />
+  <h3>Tools</h3>
+  {{#each tools}}
+    {{this}}
+    <br />
+  {{/each}}
+</div>
+<hr />
+<footer>
+  <h3>Community</h3>
+  {{#each community}}
+    <button
+      type='button'
+      class='btn btn-info'
+    >{{name}}</button>
+    <br />
+    {{type}}
+    <br />
+    <br />
+  {{/each}}
+</footer>
