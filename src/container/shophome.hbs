@@ -9,3 +9,129 @@
     </div>
   {{/with}}
 </div>
+<br />
+<div>
+  {{#with newsBlock}}
+    <h1 class='text-center'>{{title}}</h1>
+    <div class='row'>
+      {{#each cards}}
+        <div class='card text-bg-dark col-4'>
+          <div class='card-body'>
+            <div class='card-header'>
+              {{title}}
+              {{#if isTop}}
+                <span
+                  class='badge text-bg-danger rounded-pill text-uppercase'
+                >
+                  TОП
+                </span>
+              {{/if}}
+              {{#if isNew}}
+                <span
+                  class='badge text-bg-success rounded-pill text-uppercase'
+                >
+                  Нова
+                </span>
+              {{/if}}
+            </div>
+            {{description}}
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  {{/with}}
+</div>
+<br />
+<br />
+<br />
+
+<div class='nav nav-tabs mb-5'>
+  {{#each goodsBlock.tabs}}
+    <div class='nav-item col-2'>
+      {{#if isActive}}
+        <div
+          class='nav-link active text-center'
+        >{{text}}</div>
+      {{/if}}
+      {{#if isDisabled}}
+        <div
+          class='nav-link disabled text-center'
+        >{{text}}</div>
+      {{/if}}
+      {{#unless isActive}}
+        {{#unless isDisabled}}
+          <div class='nav-link text-center'>{{text}}</div>
+        {{/unless}}
+      {{/unless}}
+    </div>
+  {{/each}}
+  {{#each goodsBlock.cards}}
+    <div class='card' style='width: 18rem;'>
+      <img src='{{image}}' class='card-img-top' />
+      <div class='card-body'>
+        <h5 class='card-title'>{{title}}</h5>
+        {{#if isHot}}
+          <span
+            class='badge text-bg-warning rounded-pill text-uppercase'
+          >
+            HOT
+          </span>
+        {{/if}}
+        {{#if isNew}}
+          <span
+            class='badge text-bg-primary rounded-pill text-uppercase'
+          >
+            Новe
+          </span>
+        {{/if}}
+        <p class='card-text'>{{description}}</p>
+      </div>
+    </div>
+  {{/each}}
+</div>
+<hr />
+<br />
+<div>
+  {{#with subscribe}}
+    <div class='card text-bg-dark row'>
+      <h2>{{header}}</h2>
+      <p>{{description}}</p>
+      <br />
+      {{#each buttons}}
+        <button
+          class='btn btn-primary col-3'
+        >{{text}}</button>
+        <br />
+      {{/each}}
+    </div>
+  {{/with}}
+</div>
+<hr />
+<br />
+<div>
+  {{#with service}}
+    <div class='alert text-bg-success text-center'>
+      <h2>{{title}}</h2>
+      <p>{{description}}</p>
+      <br />
+      {{#each buttons}}
+        <a class='btn btn-primary'>{{text}}</a>
+        <br />
+      {{/each}}
+    </div>
+  {{/with}}
+</div>
+<br />
+<hr />
+<br />
+<div class='nav'>
+  {{#each footer}}
+    <ul class="nav-item col-2">
+      {{#each this}}
+        <li class="nav-link">
+          <a class="nav-link {{#if @last}} disabled {{/if}}" href="{{link}}">{{text}}</a>
+        </li>
+      {{/each}}
+    </ul>
+  {{/each}}
+</div>
