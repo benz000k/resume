@@ -116,43 +116,89 @@
         {{/each}}
       {{/with}}
     {{/with}}
-  </div>
-</div>
-<div class='col-4'>
-  <div class='card'>
-    <div class='card-body'>
-      {{#each action_block}}
-        {{#if isSuccess}}
-          <button class='btn btn-success'>{{text}}</button>
-        {{/if}}
-        {{#if isDanger}}
-          <button class='btn btn-danger'>{{text}}</button>
-        {{/if}}
-        {{#if isInfo}}
-          <button class='btn btn-info'>{{text}}</button>
-        {{/if}}
-        <br />
-        <br />
-      {{/each}}
+    <div>
+      <hr />
     </div>
-  </div>
-  <br />
-  <div class='card'>
-    <div class='card-body'>
-      {{#with total}}
-        <div class='card-header'><h4>{{title}}</h4></div>
-        {{#each item_list}}
-          {{name}}:
-          {{price}}
-          <br />
+    {{#with delivery}}
+      <h4>{{title}}</h4>
+      {{#each select}}
+      <label class='form-label'>{{label}}</label>
+      <select class='form-select' />
+        {{#each options}}
+        <option value="{{value}}">{{text}}</option>
         {{/each}}
-        <hr />
-        {{#each additional_info}}
-          {{text}}:
-          {{value}}
-          <br />
-        {{/each}}
+      </select>
+      {{/each}}
+      {{#each delivery_type}}
+        <div class="form-check">
+          <input class="form-check-input" type="radio">
+          <label class="form-check-label">{{type}}</label>
+        </div>
+      {{/each}}
+      <div>
+        <hr>
+      </div>
+      {{#with payment}}
+        <h4>{{title}}</h4>
       {{/with}}
+  </div>
+  <div class='col-4'>
+    <div class='card'>
+      <div class='card-body'>
+        {{#each action_block}}
+          {{#if isSuccess}}
+            <button
+              class='btn btn-success'
+            >{{text}}</button>
+          {{/if}}
+          {{#if isDanger}}
+            <button class='btn btn-danger'>{{text}}</button>
+          {{/if}}
+          {{#if isInfo}}
+            <button class='btn btn-info'>{{text}}</button>
+          {{/if}}
+          <br />
+          <br />
+        {{/each}}
+      </div>
+    </div>
+    <br />
+    <div class='card'>
+      <div class='card-body'>
+        {{#with total}}
+          <div class='card-header'><h4>{{title}}</h4></div>
+          {{#each item_list}}
+            {{name}}:
+            {{price}}
+            <br />
+          {{/each}}
+          <hr />
+          {{#each additional_info}}
+            {{text}}:
+            {{value}}
+            <br />
+          {{/each}}
+          <hr />
+          {{#with total_price}}
+            {{text}}:
+            {{value}}
+          {{/with}}
+          <hr />
+          {{#each button}}
+            {{#if isPrimary}}
+              <button
+                class='btn btn-primary'
+              >{{text}}</button>
+            {{/if}}
+            <br />
+            {{#if isOutline}}
+              <button
+                class='btn btn-outline-primary'
+              >{{text}}</button>
+            {{/if}}
+          {{/each}}
+        {{/with}}
+      </div>
     </div>
   </div>
 </div>
