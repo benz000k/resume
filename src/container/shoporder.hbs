@@ -122,12 +122,12 @@
     {{#with delivery}}
       <h4>{{title}}</h4>
       {{#each select}}
-      <label class='form-label'>{{label}}</label>
-      <select class='form-select' />
-        {{#each options}}
-        <option value="{{value}}">{{text}}</option>
-        {{/each}}
-      </select>
+        <label class='form-label'>{{label}}</label>
+        <select class='form-select' />
+          {{#each options}}
+          <option value="{{value}}">{{text}}</option>
+          {{/each}}
+        </select>
       {{/each}}
       {{#each delivery_type}}
         <div class="form-check">
@@ -140,7 +140,94 @@
       </div>
       {{#with payment}}
         <h4>{{title}}</h4>
+        {{#each list}}
+          <div class="form-check">
+            <input class="form-check-input" type="radio">
+            <label class="form-check-label">{{type}}</label>
+          </div>
+          <div class="from-text">{{description}}</div>
+          <br>
+        {{/each}}
       {{/with}}
+      <div>
+        <hr>
+      </div>
+      {{#with contact}}
+        <h4>{{title}}</h4>
+          <div class='col-12'>
+              <div class='row'>
+                <div class='col-6'>
+                  {{#with surname}}
+                    <label
+                      class='form-label'
+                    >{{label}}</label>
+                    <input
+                      class='form-control'
+                      placeholder='{{placeholder}}'
+                    />
+                    <div
+                      class='form-text text-second'
+                    >{{caption}}</div>
+                  {{/with}}
+                </div>
+                <div class='col-6'>
+                  {{#with name}}
+                    <label
+                      class='form-label'
+                    >{{label}}</label>
+                    <input
+                      class='form-control'
+                      placeholder='{{placeholder}}'
+                    />
+                    <div class='form-text text-second'>
+                      {{caption}}
+                    </div>
+                  {{/with}}
+                </div>
+                <div>
+                  <br />
+                </div>
+                <div class='col-6'>
+                  {{#with phone}}
+                    <label
+                      class='form-label'
+                    >{{label}}</label>
+                    <input
+                      class='form-control'
+                      placeholder='{{placeholder}}'
+                    />
+                    <div class='form-text text-second'>
+                      {{caption}}
+                    </div>
+                  {{/with}}
+                </div>
+                <div class='col-6'>
+                  {{#with email}}
+                    <label
+                      class='form-label'
+                    >{{label}}</label>
+                    <input
+                      class='form-control'
+                      placeholder='{{placeholder}}'
+                    />
+                    <div class='form-text text-second'>
+                      {{caption}}
+                    </div>
+                  {{/with}}
+                </div>
+              </div>
+            </div>
+            <div>
+              <hr>
+            </div>
+            {{#with coment}}
+              <div>
+                <label class='form-label'>{{label}}</label>
+                <input class='form-control' placeholder="{{placeholder}}" />
+              </div>
+            {{/with}}
+       {{/with}}
+     {{/with}}
   </div>
   <div class='col-4'>
     <div class='card'>
