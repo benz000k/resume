@@ -52,22 +52,54 @@
     </div>
     {{#with goodsOtherBlock}}
       <h4 class="text-center">{{title}}</h4>
-      {{#each cards}}
       <div class="row">
-        <div class="card col-4">
-          <img src="{{image}}" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title">{{title}}</h5>
-            {{#if isHot}}
-              <span class='badge text-bg-warning rounded-pill text-uppercase'>HOT!</span>
-            {{/if}}
-            {{#if idNew}}
-              <span class='badge text-bg-primary rounded-pill text-uppercase'>Нове</span>
-            {{/if}}
-            <p class="card-text">{{description}}</p>
+        {{#each cards}}
+          <div class="card col-4">
+            <img src="{{image}}" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">{{title}}</h5>
+              {{#if isHot}}
+                <span class='badge text-bg-warning rounded-pill text-uppercase'>HOT!</span>
+              {{/if}}
+              {{#if idNew}}
+                <span class='badge text-bg-primary rounded-pill text-uppercase'>Нове</span>
+              {{/if}}
+              <p class="card-text">{{description}}</p>
+            </div>
           </div>
-        </div>
+        {{/each}}
       </div>
-      {{/each}}
     {{/with}}
+    <div>
+      <hr>
+    </div>
+    <div>
+      {{#with subscribe}}
+        <div class='card text-bg-dark row'>
+            <h2>{{header}}</h2>
+            <p>{{description}}</p>
+            <br />
+            {{#each buttons}}
+              <button
+                class='btn btn-primary col-3'
+              >{{text}}</button>
+              <br />
+            {{/each}}
+          </div>
+      {{/with}}
+   </div>
+   <div>
+    <hr>
+   </div>
+   <div class='nav'>
+      {{#each footer}}
+        <ul class="nav-item col-2">
+          {{#each this}}
+            <li class="nav-link">
+              <a class="nav-link {{#if @last}} disabled {{/if}}" href="{{link}}">{{text}}</a>
+            </li>
+          {{/each}}
+        </ul>
+      {{/each}}
+    </div>
 </div>
