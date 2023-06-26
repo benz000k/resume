@@ -1,0 +1,73 @@
+<div>
+  {{#with navigation}}
+    <div class='nav'>
+      {{#each links}}
+        <div class='nav-item'>
+          <a href='{{href}}' class='nav-link'>{{text}}</a>
+        </div>
+      {{/each}}
+    </div>
+  {{/with}}
+  <div>
+    <hr />
+  </div>
+  {{#with header}}
+    <h1>{{title}}</h1>
+    <br />
+    {{#with button}}
+      <a class='btn btn-outline-secondary'>{{text}}</a>
+    {{/with}}
+  {{/with}}
+  <div>
+    <hr />
+  </div>
+    <div>
+      {{> cartGoodsItem}}
+    </div>
+    <div>
+      <hr>
+    </div>
+    {{#with total}}
+      <h4>{{title}}</h4>
+      <h4>{{amount}}</h4>
+      {{delivery}}
+      <br>
+      <br>
+      {{#each buttons}}
+        {{#if isSuccess}}
+              <button
+                class='btn btn-success'
+              >{{text}}</button>
+            {{/if}}
+            <br />
+            {{#if isOutline}}
+              <button
+                class='btn btn-outline-success'
+              >{{text}}</button>
+            {{/if}}
+      {{/each}}
+    {{/with}}
+    <div>
+      <hr>
+    </div>
+    {{#with goodsOtherBlock}}
+      <h4 class="text-center">{{title}}</h4>
+      {{#each cards}}
+      <div class="row">
+        <div class="card col-4">
+          <img src="{{image}}" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">{{title}}</h5>
+            {{#if isHot}}
+              <span class='badge text-bg-warning rounded-pill text-uppercase'>HOT!</span>
+            {{/if}}
+            {{#if idNew}}
+              <span class='badge text-bg-primary rounded-pill text-uppercase'>Нове</span>
+            {{/if}}
+            <p class="card-text">{{description}}</p>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    {{/with}}
+</div>
