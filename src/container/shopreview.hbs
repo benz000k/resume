@@ -1,0 +1,146 @@
+<div class='card'>
+    {{#with navigation}}
+      <div class='nav'>
+        {{#each links}}
+          <div class='nav-item'>
+            <a href='{{href}}' class='nav-link'>{{text}}</a>
+          </div>
+        {{/each}}
+      </div>
+    {{/with}}
+  </div>
+</div>
+<hr />
+<div class="row">
+  <div class="col-8">
+    {{#with formBlock}}
+      <h3>{{header}}</h3>
+      {{#with rating}}
+        {{title}}:
+        {{value}}
+      {{/with}}
+      <br />
+      {{#with actionBlock}}
+        {{#each tabs}}
+          {{#if isActive}}
+            <a class='btn btn-link'>{{text}}</a>
+          {{else}}
+            <a class='btn btn-link'>{{text}}</a>
+          {{/if}}
+        {{/each}}
+        <hr />
+        {{#with report}}
+         <div class="card">
+          <div class="card-body">
+            {{title}}
+            <br>
+            {{#with button}}
+              <button class="btn btn-secondary" href="{{link}}">{{text}}</button>
+            {{/with}}
+          </div>
+         </div>
+        {{/with}}
+      {{/with}}
+      <div>
+        <hr>
+      </div>
+      {{#with feedbackBlock}}
+        <h3>{{title}}</h3>
+        <br>
+        <div class="row">
+          {{#each buttons}}
+            <div class="col-3">
+              {{#if isWarning}}
+                <button class="btn btn-warning">{{text}}</button>
+              {{/if}}
+              {{#if isSuccess}}
+                <button class="btn btn-success">{{text}}</button>
+              {{/if}}
+              {{#if isDanger}}
+                <button class="btn btn-danger">{{text}}</button>
+              {{/if}}
+            </div>
+          {{/each}}
+        </div>
+      {{/with}}
+      <div>
+        <hr>
+      </div>
+   </div>
+    <div class="col-4">
+     {{#with goodsInfo}}
+      <div class="card">
+        <div class="card-body">
+          <img src="{{photo}}">
+          <br>
+            <strong>{{name}}</strong>
+        </div>
+      </div>
+      <br>
+      <div class="card">
+        <div class="card-body">
+          <h4>{{price}}</h4>
+          {{#if inMarket}}
+            Є в наявності
+           {{else}}
+            Немає в наявності
+          {{/if}}
+          <br>
+          <br>
+          {{#each buttons}}
+            {{#if isPrimary}}
+              <button class="btn btn-primary">{{text}}</button>
+            {{/if}}
+            <br>
+            {{#if isSecondary}}
+              <button class="btn btn-secondary">{{text}}</button>
+            {{/if}}
+          {{/each}}
+        </div>
+      </div>
+      <br>
+      <div class="card">
+        <div class="card-body">
+          {{#with seller}}
+            {{title}}:
+            <strong>{{value}}</strong>
+          {{/with}}
+        </div>
+      </div>
+     {{/with}}
+    </div> 
+  {{/with}}
+</div>
+<br>
+<div>
+  {{#each reviewList}}
+    {{> reviewItem}}
+    <br>
+  {{/each}}
+</div>
+<hr>
+<div>
+  {{#with service}}
+    <div class='alert text-bg-success text-center'>
+      <h2>{{title}}</h2>
+      <p>{{description}}</p>
+      <br />
+      {{#each buttons}}
+        <a class='btn btn-primary'>{{text}}</a>
+        <br />
+      {{/each}}
+    </div>
+  {{/with}}
+</div>
+<hr>
+  <div class='nav'>
+      {{#each footer}}
+        <ul class="nav-item col-2">
+          {{#each this}}
+            <li class="nav-link">
+              <a class="nav-link {{#if @last}} disabled {{/if}}" href="{{link}}">{{text}}</a>
+            </li>
+          {{/each}}
+        </ul>
+      {{/each}}
+    </div>
