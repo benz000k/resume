@@ -40,7 +40,7 @@
   <br />
 </div>
 <div class='row'>
-  <div class='col-6'>
+  <div class='col-4'>
     {{#with filterBlock}}
       <div class='card'>
         <div class='card-body'>
@@ -129,12 +129,13 @@
       </div>
     {{/with}}
   </div>
-  <div>
-  <div class='row'>
-    {{#each goodsList}}
-      {{> catalogItem}}
-      <br>
-    {{/each}}
+  <div class='col-8'>
+    <div class="row">
+      {{#each goodsList}}
+        {{> catalogItem}}
+        <br>
+      {{/each}}
+    </div>
   </div>
 </div>
 <hr>
