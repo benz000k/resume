@@ -37,7 +37,36 @@ router.get('/', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
-  res.render('index', {})
+  res.render('index', {
+    layout: 'index',
+
+    main: {
+      name: 'Vladislav Kokosov',
+      project: 'Resume project',
+      info: {
+        infoPage: 'Список сторінок',
+        description: ' Це мій перший pet-project',
+        button: [
+          {
+            text: 'Skills',
+            href: '/skills',
+          },
+          {
+            text: 'Education',
+            href: '/education',
+          },
+          {
+            text: 'Work',
+            href: '/work',
+          },
+          {
+            text: 'Summary',
+            href: '/summary',
+          },
+        ],
+      },
+    },
+  })
   //                  ↑↑ сюди вводимо JSON дані
 })
 
