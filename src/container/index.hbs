@@ -2,8 +2,37 @@
 Це код container файлу для index сторінки, 
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
  }}
-
-<div class='display-1'>Hello this is my Resume</div>
+<main class='mt-5'>
+  {{#with main}}
+    <div class='card'>
+      <div class='card-body'>
+        <div class='row'>
+          <div class='col-6'><strong>{{name}}</strong></div>
+          <div class='text-end col-6'><strong
+            >{{project}}</strong></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <br />
+    </div>
+    {{#with info}}
+      <h3>{{infoPage}}</h3>
+      {{description}}
+      <div>
+        <br />
+      </div>
+      {{#each button}}
+        <a
+          class='btn btn-primary'
+          href='{{href}}'
+        >{{text}}</a>
+        <br />
+        <br />
+      {{/each}}
+    {{/with}}
+  {{/with}}
+</main>
 {{! 
     Цей код містить лише те, що буде виводитись в <body>
     Адже наш layout/default.hbs має вже структуру HTML

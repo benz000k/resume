@@ -37,7 +37,105 @@ router.get('/', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
-  res.render('index', {})
+  res.render('index', {
+    layout: 'index',
+
+    main: {
+      name: 'Vladislav Kokosov',
+      project: 'Resume project',
+      info: {
+        infoPage: 'Список сторінок',
+        description:
+          'Знизу ви можете побачити кнопки на всі сторінки які робилися в цьому проекті',
+        button: [
+          {
+            text: 'Skills',
+            href: '/skills',
+          },
+          {
+            text: 'Education',
+            href: '/education',
+          },
+          {
+            text: 'Work',
+            href: '/work',
+          },
+          {
+            text: 'Summary',
+            href: '/summary',
+          },
+          {
+            text: 'WEB',
+            href: '/web',
+          },
+          {
+            text: 'Task 21',
+            href: '/task21',
+          },
+          {
+            text: 'Task 22',
+            href: '/task31',
+          },
+          {
+            text: 'Task 31',
+            href: '/facebook',
+          },
+          {
+            text: 'Facebook',
+            href: '/facebook',
+          },
+          {
+            text: 'Car',
+            href: '/car',
+          },
+          {
+            text: 'Bio',
+            href: '/bio',
+          },
+          {
+            text: 'JavaScript',
+            href: '/js',
+          },
+          {
+            text: 'Mac',
+            href: '/mac',
+          },
+          {
+            text: 'Person',
+            href: '/person',
+          },
+          {
+            text: 'Program',
+            href: '/program',
+          },
+          {
+            text: 'Shopcart',
+            href: '/shopcart',
+          },
+          {
+            text: 'Shophome',
+            href: '/shophome',
+          },
+          {
+            text: 'Shopcatalog',
+            href: '/shopcatalog',
+          },
+          {
+            text: 'Shoporder',
+            href: '/shoporder',
+          },
+          {
+            text: 'Shopprofile',
+            href: '/shopprofile',
+          },
+          {
+            text: 'Shopreview',
+            href: '/shopreview',
+          },
+        ],
+      },
+    },
+  })
   //                  ↑↑ сюди вводимо JSON дані
 })
 
